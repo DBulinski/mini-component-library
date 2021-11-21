@@ -18,10 +18,12 @@ const LargeProgressBar = styled(BaseProgressBar)`
 
 const MediumProgressBar = styled(BaseProgressBar)`
   height: 12px;
+  border-radius: 4px;
 `
 
 const SmallProgressBar = styled(BaseProgressBar)`
   height: 8px;
+  border-radius: 4px;
 `
 
 const Progress = styled.div`
