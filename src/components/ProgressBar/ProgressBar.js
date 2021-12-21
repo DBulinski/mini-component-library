@@ -59,7 +59,7 @@ const ProgressBar = ({ value, size }) => {
 
   const Component = componentBySize[size];
 
-  return <Component role="progressbar" aria-valuenow={value} aria-valuemin="0" aria-valuemax="100" size={size}>
+  return <Component role="progressbar" aria-valuenow={value} aria-valuemin="0" aria-valuemax="100">
     <VisuallyHidden>{value}%</VisuallyHidden>
     <Progress $value={value} />
   </Component>;
