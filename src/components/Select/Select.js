@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import { COLORS } from '../../constants';
 import Icon from '../Icon';
-import { getDisplayedValue } from './Select.helpers';
 
 const Wrapper = styled.div`
   position: relative;
@@ -11,6 +10,7 @@ const Wrapper = styled.div`
 `
 
 const SelectComponent = styled.select`
+  position: relative;
   padding: 12px 52px 12px 16px;
   border-radius: 8px;
   border: none;
@@ -35,10 +35,10 @@ const Chevron = styled(Icon)`
 const Select = ({ label, value, onChange, children }) => {
   return (
     <Wrapper>
+      <Chevron id="chevron-down" />
       <SelectComponent aria-label={label} value={value} onChange={onChange}>
         {children}
       </SelectComponent>
-      <Chevron id="chevron-down" />
     </Wrapper>
   );
 };
