@@ -29,7 +29,11 @@ const Chevron = styled(Icon)`
   top: 50%;
   right: 12px;
   transform: translateY(-50%);
-  currentColor: white;
+  color: ${COLORS.gray700};
+
+  ${Wrapper}:hover & {
+    color: ${COLORS.black};
+  }
 `
 
 const Select = ({ label, value, onChange, children }) => {
