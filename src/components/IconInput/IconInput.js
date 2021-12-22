@@ -25,7 +25,7 @@ const StyledIcon = styled(Icon)`
 const Input = styled.input`
   width: 100%;
   border: none;
-  border-bottom: 1px solid ${COLORS.black};
+  border-bottom: var(--border-width) solid ${COLORS.black};
   padding: var(--input-padding);
   padding-left: var(--padding-left);
   font-weight: 700;
@@ -46,12 +46,14 @@ const sizes = { small: {
     icon: "16px",
     font: "14px",
     paddingLeft: "24px",
-    padding: "4px"
+    padding: "4px",
+    borderWidth: "1px"
   }, large: {
     padding: "9px",
     paddingLeft: "32px",
     icon: "24px",
-    font: "18px"
+    font: "18px",
+    borderWidth: "2px"
   } };
 
 const IconInput = ({
@@ -63,7 +65,7 @@ const IconInput = ({
 }) => {
   const sizeValues = sizes[size];
 
-  return <Wrapper style={{ "--input-width": width + "px", "--icon-size": sizeValues.icon, "--font-size": sizeValues.font, "--padding-left": sizeValues.paddingLeft, "--input-padding": sizeValues.padding }}>
+  return <Wrapper style={{ "--border-width": sizeValues.borderWidth, "--input-width": width + "px", "--icon-size": sizeValues.icon, "--font-size": sizeValues.font, "--padding-left": sizeValues.paddingLeft, "--input-padding": sizeValues.padding }}>
     <StyledIcon size={sizeValues.icon} id={icon} />
     <VisuallyHidden htmlFor={`${label}--id`}>{label}</VisuallyHidden>
     <Input id={`${label}--id`} placeholder={placeholder} type="text" />
